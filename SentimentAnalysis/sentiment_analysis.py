@@ -27,10 +27,9 @@ def sentiment_analyzer(text_to_analyse: str) -> dict:
     myobj = INPUT_JSON.copy()
     myobj["raw_document"]["text"] = text_to_analyse
 
-    response = requests.post(url, json=myobj, headers=headers, timeout=10)
-    response.raise_for_status()
-
+    response = requests.post(url, json=myobj, headers=headers, timeout=30)
     print(response.status_code)
+    response.raise_for_status()
     return {
         "label": response.json()["documentSentiment"]["label"],
         "score": response.json()["documentSentiment"]["score"],
