@@ -19,8 +19,11 @@ def sent_analyzer():
     '''
     # TODO
     text = request.args.get('textToAnalyze')
-    sentiment_dict = sentiment_analyzer(text)
-    return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}."
+    try:
+        sentiment_dict = sentiment_analyzer(text)
+        return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}."
+    except Exception as e:
+        return f"An error occured: {e}"
 
 
 @app.route("/")
