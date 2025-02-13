@@ -19,7 +19,7 @@ def sent_analyzer():
         score for the provided text.
     '''
     # TODO
-    text = unquote(request.args.get("text"))
+    text = request.args.get("text")
     sentiment_dict = sentiment_analyzer(text)
     return f"Sentiment is {sentiment_dict['label']} with a confidence score of {sentiment_dict['score']}"
 
