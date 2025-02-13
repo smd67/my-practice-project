@@ -6,7 +6,6 @@
 # Import the sentiment_analyzer function from the package created: TODO
 from flask import Flask, render_template, request
 from SentimentAnalysis.sentiment_analysis import sentiment_analyzer
-from urllib.parse import unquote
 
 #Initiate the flask app : TODO
 app = Flask(__name__)
@@ -19,9 +18,9 @@ def sent_analyzer():
         score for the provided text.
     '''
     # TODO
-    text = request.args.get("text")
+    text = request.args.get('textToAnalyze')
     sentiment_dict = sentiment_analyzer(text)
-    return f"Sentiment is {sentiment_dict['label']} with a confidence score of {sentiment_dict['score']}"
+    return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}.")
 
 
 @app.route("/")
