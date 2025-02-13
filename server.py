@@ -20,7 +20,7 @@ def sent_analyzer():
     # TODO
     text = request.args.get('textToAnalyze')
     sentiment_dict = sentiment_analyzer(text)
-    return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}.")
+    return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}."
 
 
 @app.route("/")
