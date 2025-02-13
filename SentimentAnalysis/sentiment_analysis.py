@@ -20,6 +20,7 @@ def sentiment_analyzer(text_to_analyse: str) -> dict:
     Analyze the sentiment of a given text.
     """
 
+    print(f"Analyzing sentiment: {text_to_analyse}")
     url = URL
     headers = HEADERS
 
