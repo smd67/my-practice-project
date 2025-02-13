@@ -23,7 +23,7 @@ def sent_analyzer():
         sentiment_dict = sentiment_analyzer(text)
         return f"The given text has been identified as {sentiment_dict['label']} with a score of {sentiment_dict['score']}."
     except Exception as e:
-        return f"An error occured: {e}"
+        return f"Invalid input! Try again."
 
 
 @app.route("/")
